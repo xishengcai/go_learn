@@ -102,6 +102,6 @@ func main() {
 
 	fmt.Println("\r\n 从堆中取数据")
 	for i := len(heap.List); i > 0; i-- {
-		fmt.Println(len(heap.List), "   ", heap.Pop())
+		fmt.Println(len(heap.List), " ", heap.Pop())
 	}
 }

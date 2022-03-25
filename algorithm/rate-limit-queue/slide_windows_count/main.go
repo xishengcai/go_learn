@@ -42,7 +42,7 @@ func main() {
 
 		if listSum(listPart) >= 500 {
 			fmt.Println("reach limit")
-			time.Sleep(time.Second*1)
+			time.Sleep(time.Second * 1)
 			continue
 		}
 

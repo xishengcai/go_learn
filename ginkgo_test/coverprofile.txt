@@ -1,0 +1,2 @@
+go_learn/ginkgo_test/books/books.go:9:	CategoryByLength	100.0%
+total:					(statements)		100.0%

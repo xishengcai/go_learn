@@ -1,12 +1,12 @@
 package main
 
-import(
+import (
 	"fmt"
 )
 
 // 抽象观察者
 type IObserver interface {
-	Notify() // 当被观察对象有更改的时候，出发观察者的Notify() 方法
+	Notify() // 当被观察对象有更改的时候，触发观察者的Notify() 方法
 }
 
 // 抽象被观察者
@@ -14,7 +14,6 @@ type ISubject interface {
 	AddObservers(observers ...IObserver) // 添加观察者
 	NotifyObservers()                    // 通知观察者
 }
-
 
 type Observer struct {
 }
@@ -50,4 +49,3 @@ func main() {
 	// 更改完毕，触发观察者
 	s.NotifyObservers() // output: 已经触发了观察者
 }
-

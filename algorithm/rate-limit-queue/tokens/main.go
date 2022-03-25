@@ -9,8 +9,7 @@ func main() {
 	goroutine()
 }
 
-
-func normal(){
+func normal() {
 	var rate = 10        // 令牌生成速度，每秒10个
 	var tokens int64 = 0 // 当前令牌数量
 	var timeStamp = time.Now().Unix()

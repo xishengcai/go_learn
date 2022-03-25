@@ -14,7 +14,7 @@ func main() {
 			count = 1
 			sTime = time.Now()
 		}
-		if count > 100  {
+		if count > 100 {
 			time.Sleep(time.Millisecond * 100)
 			fmt.Println("reach limit...")
 			continue
