@@ -95,14 +95,19 @@ genServerCrt(){
       echo subjectAltName = IP:${IP} > ${dir}/extfile.cnf
       openssl x509 -req -in ${dir}/${i}.csr -CA ${dir}/ca.crt -CAkey ${dir}/ca.key -CAcreateserial -extfile ${dir}/extfile.cnf -out ${dir}/${i}.crt -days 3650
     else
-      openssl x509 -req -days 3650 -in ${dir}/${i}.csr -CA ${dir}/ca.crt -CAkey ${dir}/ca.key -CAcreateserial -out ${dir}/${i}.crt
-      openssl x509 -req -days 3650 -in ${dir}/${i}.csr -CA ${dir}/ca.crt -CAkey ${dir}/ca.key -CAcreateserial -out ${dir}/${i}.crt
+      openssl x509 -req -days 3650 -in ${dir}/${i}.csr\
+      -CA ${dir}/ca.crt \
+      -CAkey ${dir}/ca.key \
+      -CAcreateserial -out ${dir}/${i}.crt
     fi
 
-    openssl req -new -newkey rsa:${rsa} -keyout ${dir}/${i}.key -subj "/CN=${i}" -out ${dir}/${i}.csr -nodes
+    openssl req -new -newkey rsa:${rsa}\
+     -keyout ${dir}/${i}.key\
+     -subj "/CN=${i}" \
+#    -config <(cat /System/Library/OpenSSL/openssl.cnf <(printf "[SAN]\nsubjectAltName=DNS:${i}")) \
+     -out ${dir}/${i}.csr -nodes
     openssl x509 -req -sha256 -days 3650 -in ${dir}/${i}.csr -CA ${dir}/ca.crt -CAkey ${dir}/ca.key -set_serial 02 -out ${dir}/${i}.crt
   done
-
 
 }
 
