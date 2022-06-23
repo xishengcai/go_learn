@@ -7,13 +7,15 @@ import (
 
 // 堆是一个完全二叉树，必须满足根节点大于两个叶子节点
 // 从一个数组中构建堆：1.转二叉树 2.对半 3.siftDown
+
+// ElementType 堆元素
 type ElementType int
 
 type Heap struct {
 	List []ElementType
 }
 
-// 入列, 从堆尾插入，然后向上移动
+// Push 入列, 从堆尾插入，然后向上移动
 func (h *Heap) Push(data ElementType) {
 	j := len(h.List)
 	h.List = append(h.List, data)
@@ -29,7 +31,7 @@ func (h *Heap) Push(data ElementType) {
 	}
 }
 
-// 出列
+// Pop 出列
 func (h *Heap) Pop() ElementType {
 	minData := h.List[0]
 	j := len(h.List)
@@ -43,7 +45,7 @@ func (h *Heap) Pop() ElementType {
 	return minData
 }
 
-// 向下移动
+// ShiftDown 向下移动
 func (h *Heap) ShiftDown(data ElementType, begin int) {
 	// 从堆顶构建最小堆, 在堆顶放入一个元素
 	//循环条件 begin < len(heap)

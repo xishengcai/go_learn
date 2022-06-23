@@ -24,3 +24,10 @@ func TestPalindromeDynamicPlan(t *testing.T) {
 	println(palindromeDynamicPlan("abc"))
 	println(palindromeDynamicPlan("cbbd"))
 }
+
+func TestPalindromeInt(t *testing.T) {
+	t.Log(isPalindrome(12321))
+	t.Log(isPalindrome(123321))
+	t.Log(isPalindrome(0))
+	t.Log(isPalindrome(10))
+}
