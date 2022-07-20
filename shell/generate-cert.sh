@@ -177,12 +177,12 @@ main() {
 }
 
 generatePem(){
-  openssl genrsa -out ${dir}/ca.key 2048
+  openssl genrsa -out ${dir}/ca.key 4096
   openssl req -x509 -new -nodes -key ${dir}/ca.key -days 3650 -out ${dir}/ca.pem -subj "/CN=Launcher LStack Authority"
 
   IFS=","
   for i in $CN; do
-    openssl genrsa -out ${dir}/${i}.key 2048
+    openssl genrsa -out ${dir}/${i}.key 4096
     openssl req -new -key ${dir}/${i}.key -out ${dir}/${i}.csr -subj "/CN=${i}"
     openssl x509 -req -in ${dir}/${i}.csr -CA ${dir}/ca.pem -CAkey ${dir}/ca.key -CAcreateserial -out ${dir}/${i}.pem -days 365 -extensions v3_req
   done
