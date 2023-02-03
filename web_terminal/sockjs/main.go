@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
-	"github.com/igm/pubsub"
-	"github.com/igm/sockjs-go/v3/sockjs"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/igm/pubsub"
+	"github.com/igm/sockjs-go/v3/sockjs"
 )
 
 var (
