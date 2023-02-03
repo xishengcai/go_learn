@@ -1,7 +1,6 @@
 package books
 
 import (
-	"k8s.io/klog"
 	"time"
 )
 

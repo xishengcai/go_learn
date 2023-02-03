@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/amahi/spdy"
 	"net/http"
+
+	"github.com/amahi/spdy"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
